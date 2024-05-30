@@ -22,6 +22,7 @@ public class NezvonApplication {
 		for (String key : keys) {
 			String value = jedis.get(key);
 			System.out.println(key + ": " + value);
+			jedis.expire(key, 300); // Установка TTL на 5 минут (300 секунд
 		}
 
 		// Закрытие соединения
